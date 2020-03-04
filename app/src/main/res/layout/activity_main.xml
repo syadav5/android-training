@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/imgtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="Hello World!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="3dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/imgdesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgtitle"
+        tools:srcCompat="@drawable/london_img" />
+
+    <TextView
+        android:id="@+id/imgdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="5"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        android:text="Several bridges named London Bridge have spanned the River Thames between the City of London and Southwark, in central London. The current crossing, which opened to traffic in 1973, is a box girder bridge built from concrete and steel. It replaced a 19th-century stone-arched bridge, which in turn superseded a 600-year-old stone-built medieval structure. This was preceded by a succession of timber bridges, the first of which was built by the Roman founders of London."
+        app:layout_constraintBottom_toTopOf="@+id/buttonPanel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
+    <ScrollView
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="250dp"
+        android:scrollbars="none"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/imgdesc"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:id="@+id/buttonPanelInternal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <Button
+            android:id="@+id/darkVibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="DARK VIBRANT" />
+
+        <Button
+            android:id="@+id/lightMuted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="LIGHT MUTED" />
+
+        <Button
+            android:id="@+id/darkMuted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="DARK MUTED" />
+
+        <Button
+            android:id="@+id/Vibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="VIBRANT" />
+        <Button
+            android:id="@+id/lightVibrant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="Light VIBRANT" />
+
+        <Button
+            android:id="@+id/muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectSwatch"
+            android:text="MUTED" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/img"
+        android:pointerIcon="text"
+        android:background="@drawable/kris"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
